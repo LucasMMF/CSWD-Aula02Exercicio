@@ -1,7 +1,8 @@
-# CSWD-Projeto02
+# CSWD-Aula02Exercicio
 
-Simple project coded during a C# WebDeveloper class.
+Simple exercise coded during a C# WebDeveloper course.
 
 Contains:
 * Entity
-* Repository (using files for persistence, no DB yet)
+* Controllers
+* Repository (using .TXT files for persistence, no DB yet)
