@@ -6,6 +6,7 @@ namespace Aula02Exercicio
     {
         public static void Main(string[] args)
         {
+
             Console.WriteLine("*** EXERCÍCIO AULA 02 ***");
 
             ProdutoController produtoController = new ProdutoController();
@@ -15,6 +16,7 @@ namespace Aula02Exercicio
             fornecedorController.CadastrarFornecedor();
 
             Console.ReadKey();
+
         }
     }
 }

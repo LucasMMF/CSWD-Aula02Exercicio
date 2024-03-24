@@ -1,4 +1,5 @@
 ﻿using Aula02Exercicio.Entities;
+using Aula02Exercicio.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,8 @@ namespace Aula02Exercicio.Controllers
         {
             try
             {
-                Console.WriteLine("\n*** CADASTRO DE FORNECEDOR ***");
+
+                Console.WriteLine("\n*** CADASTRO DE FORNECEDOR ***\n");
 
                 #region Capture data for fornecedor
 
@@ -52,6 +54,25 @@ namespace Aula02Exercicio.Controllers
                     Console.Write("Deseja adicionar outro produto? (S/N): ");
                     continua = Console.ReadLine().ToUpper() == "S";
                 } while (continua);
+
+                #endregion
+
+                #region Persists data captured into a .TXT file
+
+                var fornecedorRepository = new FornecedorRepository();
+
+                fornecedorRepository.Exportar(fornecedor);
+
+                #endregion
+
+                #region Reports to the console that fornecedor has been registered
+
+                Console.WriteLine("\nFORNECEDOR CADASTRADO COM SUCESSO!\n");
+
+                Console.WriteLine($"ID FORNECEDOR...........: {fornecedor.IdFornecedor}");
+                Console.WriteLine($"FORNECEDOR..............: {fornecedor.Nome}");
+                Console.WriteLine($"CNPJ....................: {fornecedor.Cnpj}");
+                Console.WriteLine($"QTDE. DE PRODUTOS ASSC..: {fornecedor.Produtos.Count()}");
 
                 #endregion
 
